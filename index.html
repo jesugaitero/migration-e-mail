@@ -25,7 +25,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden">
 
-    <header class="bg-indigo-700 text-white pt-16 pb-12 px-6 text-center shadow-2xl relative overflow-hidden">
+    <header class="bg-indigo-700 text-white pt-12 pb-10 px-4 sm:px-6 text-center shadow-2xl relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 pointer-events-none">
             <div class="absolute top-0 left-0 w-64 h-64 rounded-full bg-white -translate-x-1/2 -translate-y-1/2"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-cyan-400 translate-x-1/3 translate-y-1/3"></div>
@@ -40,9 +40,9 @@
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto p-6 space-y-12 mt-8">
+    <main class="max-w-7xl mx-auto p-4 md:p-6 space-y-12 mt-8">
 
-        <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
+        <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 border border-slate-200">
             <h2 class="text-3xl font-bold mb-2 text-indigo-900">Execution Phases & Timelines</h2>
             <p class="text-slate-600 mb-10 text-lg">The sequential steps, along with the estimated duration for each phase.</p>
             
@@ -108,7 +108,7 @@
         </section>
 
         <div class="max-w-4xl mx-auto">
-            <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-200 flex flex-col">
+            <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 border border-slate-200 flex flex-col">
                 <h2 class="text-2xl font-bold mb-2 text-indigo-900">Credential Access Levels</h2>
                 <p class="text-sm text-slate-500 mb-8">Not all "Admin" roles are created equal. We require the highest tier of access for each platform.</p>
                 <div class="chart-container flex-grow">
@@ -120,40 +120,63 @@
             </section>
         </div>
 
-        <section class="bg-white rounded-3xl shadow-xl p-10 border border-slate-200">
+        <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-10 border border-slate-200">
             <h2 class="text-3xl font-bold mb-8 text-indigo-900">Master Credentials Checklist</h2>
-            <div class="overflow-x-auto">
+            <div class="hidden md:block overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="border-b-2 border-slate-100">
-                            <th class="py-4 font-bold text-indigo-600 uppercase tracking-wider text-xs">Required Role</th>
-                            <th class="py-4 font-bold text-indigo-600 uppercase tracking-wider text-xs">Platform</th>
-                            <th class="py-4 font-bold text-indigo-600 uppercase tracking-wider text-xs">Why It's Needed</th>
+                            <th class="p-4 font-bold text-indigo-600 uppercase tracking-wider text-xs">Required Role</th>
+                            <th class="p-4 font-bold text-indigo-600 uppercase tracking-wider text-xs">Platform</th>
+                            <th class="p-4 font-bold text-indigo-600 uppercase tracking-wider text-xs">Why It's Needed</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
-                            <td class="py-5 font-bold text-slate-800">Super Administrator</td>
-                            <td class="py-5 text-slate-500">Google Workspace</td>
-                            <td class="py-5 text-slate-600">To establish service integrations and authorize the incoming data transfer.</td>
+                            <td class="p-4 font-bold text-slate-800">Super Administrator</td>
+                            <td class="p-4 text-slate-500">Google Workspace</td>
+                            <td class="p-4 text-slate-600">To establish service integrations and authorize the incoming data transfer.</td>
                         </tr>
                         <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
-                            <td class="py-5 font-bold text-slate-800">Global Administrator</td>
-                            <td class="py-5 text-slate-500">Microsoft 365</td>
-                            <td class="py-5 text-slate-600">To grant necessary access permissions for the source environment data extraction.</td>
+                            <td class="p-4 font-bold text-slate-800">Global Administrator</td>
+                            <td class="p-4 text-slate-500">Microsoft 365</td>
+                            <td class="p-4 text-slate-600">To grant necessary access permissions for the source environment data extraction.</td>
                         </tr>
                         <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
-                            <td class="py-5 font-bold text-slate-800">Domain Administrator</td>
-                            <td class="py-5 text-slate-500">DNS Provider</td>
-                            <td class="py-5 text-slate-600">To modify external routing protocols during the Go-Live event—representing the critical project milestone.</td>
+                            <td class="p-4 font-bold text-slate-800">Domain Administrator</td>
+                            <td class="p-4 text-slate-500">DNS Provider</td>
+                            <td class="p-4 text-slate-600">To modify external routing protocols during the Go-Live event—representing the critical project milestone.</td>
                         </tr>
                         <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
-                            <td class="py-5 font-bold text-slate-800">Migration User App Passwords</td>
-                            <td class="py-5 text-slate-500">Exchange Online</td>
-                            <td class="py-5 text-slate-600">Required to bypass strict legacy authentication protocols on user accounts during the transfer.</td>
+                            <td class="p-4 font-bold text-slate-800">Migration User App Passwords</td>
+                            <td class="p-4 text-slate-500">Exchange Online</td>
+                            <td class="p-4 text-slate-600">Required to bypass strict legacy authentication protocols on user accounts during the transfer.</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="md:hidden space-y-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">Super Administrator</h3>
+                    <p class="text-sm mb-1"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Platform:</strong> <span class="text-slate-500">Google Workspace</span></p>
+                    <p class="text-sm"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Why:</strong> <span class="text-slate-600">To establish service integrations and authorize the incoming data transfer.</span></p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">Global Administrator</h3>
+                    <p class="text-sm mb-1"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Platform:</strong> <span class="text-slate-500">Microsoft 365</span></p>
+                    <p class="text-sm"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Why:</strong> <span class="text-slate-600">To grant necessary access permissions for the source environment data extraction.</span></p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">Domain Administrator</h3>
+                    <p class="text-sm mb-1"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Platform:</strong> <span class="text-slate-500">DNS Provider</span></p>
+                    <p class="text-sm"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Why:</strong> <span class="text-slate-600">To modify external routing protocols during the Go-Live event—representing the critical project milestone.</span></p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">Migration User App Passwords</h3>
+                    <p class="text-sm mb-1"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Platform:</strong> <span class="text-slate-500">Exchange Online</span></p>
+                    <p class="text-sm"><strong class="text-indigo-600 uppercase text-xs tracking-wider">Why:</strong> <span class="text-slate-600">Required to bypass strict legacy authentication protocols on user accounts during the transfer.</span></p>
+                </div>
             </div>
         </section>
 
